@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0e1f3f6e-2d04-42e3-85a5-b02223046dff" name="Production" url="http://hosting.wi1cm.uni-trier.de">
+        <fileTransfer accessType="FTPS" host="hosting.wi1cm.uni-trier.de" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="35645b21-97b0-403b-9d25-3e818193e794" name="Local" url="http://localhost">
+        <fileTransfer mountedRoot="/Applications/XAMPP/xamppfiles/htdocs/web-entwicklung" accessType="MOUNT" port="0" />
+      </webServer>
+      <webServer id="1a1825f9-b7f0-4838-89ba-f5f169ab0216" name="MAMP" url="http://localhost">
+        <fileTransfer mountedRoot="/Applications/MAMP/htdocs/web-entwicklung" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>

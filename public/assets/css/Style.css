@@ -1,0 +1,23 @@
+.navbar {
+    background-color: #002060;
+}
+
+.nav-link {
+    color: lightgrey;
+}
+
+.nav-link:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.maincontainer {
+    min-height: 85vh;
+}
+
+footer {
+    background-color: #002060;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}

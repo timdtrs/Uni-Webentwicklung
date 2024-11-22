@@ -9,7 +9,15 @@ class Home extends BaseController
     {
         echo view('templates/header');
         echo view('templates/nav');
-        echo view('body');
+        echo view('tasks');
+        echo view('templates/footer');
+    }
+
+    public function spalten()
+    {
+        echo view('templates/header');
+        echo view('templates/nav');
+        echo view('spalten');
         echo view('templates/footer');
     }
 

@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+.nav-link.active {
+    color: white !important;
+}
+
 body {
     display: flex;
     flex-direction: column;

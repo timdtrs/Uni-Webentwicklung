@@ -5,9 +5,9 @@
         </a>
         <div class="collapse navbar-collapse">
             <div class="navbar-nav">
-                <a class="nav-link" aria-current="page" href="Startseite_Spalten.html">Tasks</a>
+                <a class="nav-link" aria-current="page" href="<?= site_url('/') ?>">Tasks</a>
                 <a class="nav-link" href="#">Boards</a>
-                <a class="nav-link" href="#">Spalten</a>
+                <a class="nav-link" href="<?= site_url('spalten') ?>">Spalten</a>
             </div>
         </div>
     </div>

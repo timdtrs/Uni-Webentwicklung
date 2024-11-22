@@ -28,3 +28,13 @@ footer {
 .icon-button {
     color: #002060 !important;
 }
+
+.dropdown-icon {
+    padding-right: 1rem;
+    position: absolute;
+    right: 10px;
+    top: 350px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #6c757d;
+}

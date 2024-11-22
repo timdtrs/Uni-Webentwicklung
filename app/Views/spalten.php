@@ -4,6 +4,9 @@
             Spalten
         </div>
         <div class="card-body">
+            <a class="btn btn-primary mb-2" href="<?= site_url('spalten/erstellen') ?>" role="button">
+                Erstellen
+            </a>
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr>

@@ -13,5 +13,10 @@ class Home extends BaseController
         echo view('templates/footer');
     }
 
+    public function test()
+    {
+        echo view('templates/header');
+    }
+
 
 }

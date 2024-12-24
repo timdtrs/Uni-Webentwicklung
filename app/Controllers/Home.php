@@ -2,14 +2,18 @@
 
 namespace App\Controllers;
 
+use App\Models\TasksModel;
+
 class Home extends BaseController
 {
 
     public function index()
     {
+        $tasksmodel = new TasksModel();
+        $data['tasks'] = $tasksmodel->getData();
         echo view('templates/header');
         echo view('templates/nav');
-        echo view('tasks');
+        echo view('tasks', $data);
         echo view('templates/footer');
     }
 
@@ -28,5 +32,5 @@ class Home extends BaseController
         echo view('erstellen');
         echo view('templates/footer');
     }
-
+    
 }

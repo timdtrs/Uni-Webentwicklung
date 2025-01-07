@@ -12,6 +12,7 @@
                 <tr>
                     <th>Bezeichnung</th>
                     <th>Erinnerungsdatum</th>
+                    <th>Notiz</th>
                     <th>Bearbeiten</th>
                 </tr>
                 </thead>
@@ -23,6 +24,9 @@
                         </td>
                         <td>
                             <?= $task['erinnerungsdatum'] ?>
+                        </td>
+                        <td>
+                            <?= $task['notiz'] ?>
                         </td>
                         <td>
                             <button class="btn">

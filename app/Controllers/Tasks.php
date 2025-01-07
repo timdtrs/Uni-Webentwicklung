@@ -10,9 +10,13 @@ class Tasks extends BaseController
 {
     public function getcrud_edit($todo, $id = null)
     {
-        $data['todo'] = $todo;
-        $tasksmodel = new TasksModel();
-        $data['tasks'] = $tasksmodel->getData($id);
+        if ($todo != 0) {
+            $data['todo'] = $todo;
+            $tasksmodel = new TasksModel();
+            $data['tasks'] = $tasksmodel->getData($id);
+        } else {
+            $data['todo'] = null;
+        }
         echo view('templates/header');
         echo view('templates/nav');
         echo view('task_edit', $data);

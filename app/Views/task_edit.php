@@ -1,12 +1,12 @@
 <div class="container">
     <div class="card mt-3">
-        <div <?= $todo != '0' ? 'hidden' : '' ?> class="card-header">
+        <div class="card-header" <?= $todo != '0' ? 'hidden' : '' ?>>
             Task erstellen
         </div>
-        <div <?= $todo != '1' ? 'hidden' : '' ?> class="card-header">
+        <div class="card-header" <?= $todo != '1' ? 'hidden' : '' ?>>
             Task bearbeiten
         </div>
-        <div <?= $todo != '2' ? 'hidden' : '' ?> class="card-header">
+        <div class="card-header" <?= $todo != '2' ? 'hidden' : '' ?>>
             Task löschen
         </div>
         <div class="card-body">

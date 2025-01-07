@@ -15,7 +15,8 @@ class Tasks extends BaseController
             $tasksmodel = new TasksModel();
             $data['tasks'] = $tasksmodel->getData($id);
         } else {
-            $data['todo'] = null;
+            $data['todo'] = 0;
+            $data['tasks'] = [];
         }
         echo view('templates/header');
         echo view('templates/nav');

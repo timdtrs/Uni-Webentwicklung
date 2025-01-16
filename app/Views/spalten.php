@@ -4,6 +4,10 @@
             Spalten
         </div>
         <div class="card-body">
+
+            <pre>
+                <?php var_dump($spalten); ?>
+            </pre>
             <a class="btn btn-primary mb-2" href="<?= site_url('spalten/erstellen') ?>" role="button">
                 Erstellen
             </a>
@@ -19,31 +23,25 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Allgemeine Todos</td>
-                    <td>100</td>
-                    <td>Zu besprechen</td>
-                    <td>Noch zu besprechende todos</td>
-                    <td>
-                        <i class="icon-button fa-regular fa-pen-to-square"></i>
-                        <i class="icon-button fa-solid fa-trash"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Allgemeine Todos</td>
-                    <td>200</td>
-                    <td>Zu besprechen</td>
-                    <td>Noch zu besprechende todos</td>
-                    <td>
-                        <i class="icon-button fa-regular fa-pen-to-square"></i>
-                        <i class="icon-button fa-solid fa-trash"></i>
-                    </td>
-                </tr>
+                <?php foreach ($spalten as $spalte): ?>
+                    <tr>
+                        <td><?= $spalte['id'] ?></td>
+                        <td><?= $spalte['board_name'] ?></td>
+                        <td><?= $spalte['sortid'] ?></td>
+                        <td><?= $spalte['spalte'] ?></td>
+                        <td><?= $spalte['beschreibung'] ?></td>
+                        <td>
+                            <a href="<?= site_url('spalten/bearbeiten/' . $spalte['id']) ?>" class="icon-button">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            <a href="<?= site_url('spalten/loeschen/' . $spalte['id']) ?>" class="icon-button">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
     </div>
-
 </div>

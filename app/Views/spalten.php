@@ -4,8 +4,8 @@
             Spalten
         </div>
         <div class="card-body">
-            <a class="btn btn-primary mb-2" href="<?= site_url('spalten/erstellen') ?>" role="button">
-                Erstellen
+            <a class="btn btn-primary mb-2" href="<?= site_url('Spalten/crud_edit/0') ?>" role="button">
+                Neu
             </a>
             <table class="table table-bordered table-striped">
                 <thead>
@@ -19,28 +19,37 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Allgemeine Todos</td>
-                    <td>100</td>
-                    <td>Zu besprechen</td>
-                    <td>Noch zu besprechende todos</td>
-                    <td>
-                        <i class="icon-button fa-regular fa-pen-to-square"></i>
-                        <i class="icon-button fa-solid fa-trash"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Allgemeine Todos</td>
-                    <td>200</td>
-                    <td>Zu besprechen</td>
-                    <td>Noch zu besprechende todos</td>
-                    <td>
-                        <i class="icon-button fa-regular fa-pen-to-square"></i>
-                        <i class="icon-button fa-solid fa-trash"></i>
-                    </td>
-                </tr>
+                <?php foreach ($spalten as $spalte) : ?>
+                    <tr>
+                        <td>
+                            <?= $spalte['spaltenid'] ?>
+                        </td>
+                        <td>
+                            <?= $spalte['board'] ?>
+                        </td>
+                        <td>
+                            <?= $spalte['sortid'] ?>
+                        </td>
+                        <td>
+                            <?= $spalte['spalte'] ?>
+                        </td>
+                        <td>
+                            <?= $spalte['spaltenbeschreibung'] ?>
+                        </td>
+                        <td>
+                            <button class="btn">
+                                <a href="<?= site_url('Spalten/crud_edit/1/' . $spalte['spaltenid']) ?>">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                </a>
+                            </button>
+                            <button class="btn">
+                                <a href="<?= site_url('Spalten/crud_edit/2/' . $spalte['spaltenid']) ?>">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </button>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\SpaltenModel;
 use App\Models\TasksModel;
 
 class Home extends BaseController
@@ -19,9 +20,12 @@ class Home extends BaseController
 
     public function spalten()
     {
+        $spaltenmodel = new SpaltenModel();
+        $data['spalten'] = $spaltenmodel->getData();
+
         echo view('templates/header');
         echo view('templates/nav');
-        echo view('spalten');
+        echo view('spalten', $data);
         echo view('templates/footer');
     }
 
@@ -32,5 +36,5 @@ class Home extends BaseController
         echo view('erstellen');
         echo view('templates/footer');
     }
-    
+
 }

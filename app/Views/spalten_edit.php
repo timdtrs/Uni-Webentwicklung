@@ -53,6 +53,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">
+                        Board auswählen
+                    </label>
+                    <div class="col-sm-10">
+                        <select name="boardsid" class="form-control" <?= $todo == '2' ? 'disabled' : '' ?>>
+                            <?php foreach ($boards as $board): ?>
+                                <option value="<?= $board['id'] ?>" <?= isset($spalten[0]['boardsid']) && $spalten[0]['boardsid'] == $board['id'] ? 'selected' : '' ?>>
+                                    <?= $board['board'] ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
                 <button <?= $todo == '2' ? 'hidden' : '' ?> type="submit" class="btn btn-success">Speichern</button>
                 <button <?= $todo != '2' ? 'hidden' : '' ?> type="submit" class="btn btn-danger">Löschen</button>
                 <a href="/spalten" class="btn btn-secondary">Abbrechen</a>

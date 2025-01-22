@@ -43,12 +43,18 @@
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label">ID der Spalte</label>
                     <div class="col-sm-10">
-                        <input type="number" name="spalten_id" class="form-control"
-                               value="<?= isset($tasks[0]['spaltenid']) ? $tasks[0]['spaltenid'] : "" ?>"
-                            <?= $todo == '2' ? 'disabled' : '' ?>
-                               placeholder="Spalten ID" required>
+                        <select name="spalten_id" class="form-control" <?= $todo == '2' ? 'disabled' : '' ?> required>
+                            <option value="">Bitte wählen</option>
+                            <?php foreach ($spalten as $id): ?>
+                                <option value="<?= htmlspecialchars($id) ?>"
+                                    <?= isset($tasks[0]['spaltenid']) && $tasks[0]['spaltenid'] == $id ? 'selected' : '' ?>>
+                                    <?= $id ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
+
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label">Erinnerungsdatum</label>
                     <div class="col-sm-10">

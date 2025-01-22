@@ -4,6 +4,7 @@
 namespace App\Controllers;
 
 
+use App\Models\SpaltenModel;
 use App\Models\TasksModel;
 
 class Tasks extends BaseController
@@ -18,6 +19,15 @@ class Tasks extends BaseController
             $data['todo'] = 0;
             $data['tasks'] = [];
         }
+
+        $spaltenmodel = new SpaltenModel();
+        $spalten = $spaltenmodel->getData();
+        $spalten_ids = [];
+        foreach ($spalten as $spalt) {
+            array_push($spalten_ids, $spalt['spaltenid']);
+        }
+        $data['spalten'] = $spalten_ids;
+        
         echo view('templates/header');
         echo view('templates/nav');
         echo view('task_edit', $data);

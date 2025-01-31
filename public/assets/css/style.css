@@ -42,3 +42,28 @@ footer {
     pointer-events: none;
     color: #6c757d;
 }
+
+.actions a, .actions button {
+    text-decoration: none;
+    color: #007bff;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.actions i {
+    font-size: 1.2em;
+}
+
+/* Trennlinie */
+.navbar hr {
+    width: 100%;
+    border-top: 2px solid white;
+    margin: 0.5rem 0; /* Abstand oben und unten */
+}
+
+/* Icons und Schriftzüge kleiner */
+.navbar-nav .bi, .navbar-nav span {
+    font-size: 0.9rem;
+}

@@ -31,6 +31,10 @@ class Spalten extends BaseController
 
     public function postsubmit_edit($todo)
     {
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'board_id' => 'required',
+        ]);
         // Wenn es nicht das Löschen (todo == 2) ist, wird die Validierung ausgeführt
         if ($todo != '2' && !$this->validation->run($_POST, 'spalten')) {
             // Validierung fehlgeschlagen

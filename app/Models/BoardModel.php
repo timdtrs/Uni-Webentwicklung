@@ -7,8 +7,13 @@ use CodeIgniter\Model;
 class BoardModel extends Model
 {
     protected $table = 'boards';
-    protected $allowedFields = ['id, board'];
+    protected $allowedFields = ['id', 'board'];
     protected $primaryKey = 'id';
+
+    public function getBoards()
+    {
+        return $this->findAll();
+    }
 
     public function getData($id = null)
     {

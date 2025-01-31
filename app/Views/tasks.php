@@ -1,6 +1,27 @@
 <div class="container">
     <div class="card mt-3">
         <div class="card-header">
+            <?= $boards[0]['board'] ?>
+        </div>
+        <div class="card-body">
+            <div class="d-flex flex-row gap-2">
+                <?php foreach ($spalten as $spalte) : ?>
+                    <div class="card">
+                        <div class="card-header">
+                            <?= $spalte['spalte'] ?>
+                        </div>
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+        </div>
+    </div>
+    <!--
+    <div class="card mt-3">
+        <div class="card-header">
             Tasks
         </div>
         <div class="card-body">
@@ -46,5 +67,6 @@
             </table>
         </div>
     </div>
+    -->
 </div>
 

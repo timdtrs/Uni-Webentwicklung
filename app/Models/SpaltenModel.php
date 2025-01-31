@@ -27,4 +27,16 @@ class SpaltenModel extends Model
             return $result->getResultArray();
         }
     }
+
+    public function getByBoard($id = null)
+    {
+
+        $this->spalten = $this->db->table($this->table);
+        $this->spalten->select('*');
+        $this->spalten->where('boardsid', $id);
+        $this->spalten->orderBy('spalte', 'ASC');
+        $result = $this->spalten->get();
+        return $result->getResultArray();
+
+    }
 }

@@ -11,12 +11,21 @@ class Tasks extends BaseController
 {
     public function gettasks($boardsid = 1)
     {
-     data[]
-     $data['boardsundtasks'] = $this->MainModel->getData('boards', 'board');
-     for($i = 0; $i < count($data['boardsundtasks']); $i++){
-         ¢data['boardsundtasks'][$i]['tasks'] = json_decode('[' . $data['boardsundtasks'][$i]['tasks'] . ']');
-     }
+        $tasksModel = new TasksModel();
+        $data['boardsundtasks'] = $tasksModel->getBoardsundTasks($boardsid);
+
+        // JSON-Daten in PHP-Arrays umwandeln
+        foreach ($data['boardsundtasks'] as &$item) {
+            $item['tasks'] = json_decode('[' . $item['tasks'] . ']', true);
+        }
+
+        // Daten an die View übergeben
+        echo view('templates/header');
+        echo view('templates/nav');
+        echo view('tasks_view', $data);
+        echo view('templates/footer');
     }
+
     public function getcrud_edit($todo, $id = null)
     {
         if ($todo != 0) {
@@ -35,7 +44,7 @@ class Tasks extends BaseController
             array_push($spalten_ids, $spalt['spaltenid']);
         }
         $data['spalten'] = $spalten_ids;
-        
+
         echo view('templates/header');
         echo view('templates/nav');
         echo view('task_edit', $data);

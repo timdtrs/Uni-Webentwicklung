@@ -9,21 +9,14 @@ use App\Models\TasksModel;
 class Home extends BaseController
 {
 
-    public function index()
+    public function index($id = 1)
     {
-        $tasksmodel = new TasksModel();
-        $spaltenmodel = new SpaltenModel();
-        $boardmodel = new BoardModel();
-        $boardid = '1';
-        $data['boards'] = $boardmodel->getData($boardid);
-        $data['spalten'] = $spaltenmodel->getByBoard($boardid);
-        $data['tasks'] = $tasksmodel->getData();
-
-        echo view('templates/header');
-        echo view('templates/nav');
-        echo view('tasks', $data);
-        echo view('templates/footer');
+        $boardsmodel = new BoardModel();
+        $boards = $boardsmodel->getData();
+        $id = $boards[0]['id'];
+        return redirect()->to('Tasks/tasks/' . $id);
     }
+
 
     public function spalten()
     {

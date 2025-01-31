@@ -24,7 +24,14 @@ class TasksModel extends Model
             $result = $this->tasks->get();
             return $result->getResultArray();
         }
+    }
 
-
+    public function getBySpalt($id = null)
+    {
+        $this->tasks = $this->db->table('tasks');
+        $this->tasks->select('*');
+        $this->tasks->where('spaltenid', $id);
+        $result = $this->tasks->get();
+        return $result->getResultArray();
     }
 }

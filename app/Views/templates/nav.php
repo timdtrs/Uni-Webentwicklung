@@ -5,7 +5,7 @@
         </a>
         <div class="collapse navbar-collapse">
             <div class="navbar-nav">
-                <a class="nav-link <?= (uri_string() == '') ? 'active' : '' ?>" aria-current="page"
+                <a class="nav-link <?= (uri_string() == 'tasks') ? 'active' : '' ?>" aria-current="page"
                    href="<?= site_url('/') ?>">Tasks</a>
                 <a class=" nav-link <?= (uri_string() == 'boards') ? 'active' : '' ?>" href="#">Boards</a>
                 <a class="nav-link <?= (uri_string() == 'spalten') ? 'active' : '' ?>"

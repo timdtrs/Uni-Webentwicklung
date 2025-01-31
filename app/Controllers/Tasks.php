@@ -9,6 +9,14 @@ use App\Models\TasksModel;
 
 class Tasks extends BaseController
 {
+    public function gettasks($boardsid = 1)
+    {
+     data[]
+     $data['boardsundtasks'] = $this->MainModel->getData('boards', 'board');
+     for($i = 0; $i < count($data['boardsundtasks']); $i++){
+         ¢data['boardsundtasks'][$i]['tasks'] = json_decode('[' . $data['boardsundtasks'][$i]['tasks'] . ']');
+     }
+    }
     public function getcrud_edit($todo, $id = null)
     {
         if ($todo != 0) {

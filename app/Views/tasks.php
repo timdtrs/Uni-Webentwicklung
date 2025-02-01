@@ -3,15 +3,26 @@
         <div class="card-header">
             <div class="d-flex flex-row justify-content-between">
                 <h3>Tasks</h3>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" id="dropdownMenu" data-bs-toggle="dropdown">
-                        <?= $board[0]['board'] ?>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                        <?php foreach ($boards as $board) : ?>
-                            <a class="dropdown-item"
-                               href="<?= base_url('tasks/tasks/' . $board['id']) ?>"><?= $board['board'] ?></a>
-                        <?php endforeach; ?>
+                <div class="d-flex flex-row gap-4">
+                    <div class="d-flex">
+                        <div class="col-auto">
+                            <div class="input-group mb-3">
+                                <input type="search" class="form-control" id="sucheboards" name="sucheboards"
+                                       placeholder="Suchen">
+                                <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" id="dropdownMenu" data-bs-toggle="dropdown">
+                            <?= $board[0]['board'] ?>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <?php foreach ($boards as $board) : ?>
+                                <a class="dropdown-item"
+                                   href="<?= base_url('tasks/tasks/' . $board['id']) ?>"><?= $board['board'] ?></a>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
             </div>

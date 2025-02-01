@@ -8,25 +8,6 @@
             </div>
         </legend>
         <div class="card-body">
-            <!-- Fehlermeldungen anzeigen -->
-            <?php if (session()->has('errors')): ?>
-                <div class="alert alert-danger">
-                    <ul>
-                        <?php foreach (session('errors') as $error): ?>
-                            <li><?= esc($error) ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-
-            <!-- Erfolgsmeldung anzeigen -->
-            <?php if (session()->has('success')): ?>
-                <div class="alert alert-success">
-                    <?= session('success') ?>
-                </div>
-            <?php endif; ?>
-
-            <!-- Formular -->
             <form action="<?= base_url('boards/submit') ?>" method="post">
                 <div class="mb-3">
                     <label for="name" class="form-label">Bezeichnung des Boards</label>

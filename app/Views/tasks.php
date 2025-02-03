@@ -28,7 +28,7 @@
             </div>
 
         </div>
-        <div class="card-body">
+        <div class="card-body" style="max-height: 520px; overflow-y: auto;">
             <div class="d-flex flex-row flex-nowrap overflow-auto gap-2">
                 <?php foreach ($spalten as $spalte) : ?>
                     <div class="card" style="min-width: 20em">

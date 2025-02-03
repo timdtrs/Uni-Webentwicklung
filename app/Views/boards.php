@@ -34,11 +34,9 @@
                             <td><?= esc($board['id']) ?></td>
                             <td><?= esc($board['board']) ?></td>
                             <td class="actions">
-                                <a href="<?= base_url('boards/edit/' . $board['id']) ?>" title="Bearbeiten"
-                                   style="text-decoration: none; color: #007bff;">
+                                <a href="<?= base_url('boards/edit/' . $board['id']) ?>" title="Bearbeiten">
                                     <i class="fas fa-edit"></i>
                                 </a>
-
                                 <form action="<?= base_url('boards/delete/' . $board['id']) ?>" method="post"
                                       onsubmit="return confirm('Sind Sie sicher, dass Sie dieses Board löschen möchten?');">
                                     <button type="submit"

@@ -46,25 +46,40 @@
                                     <div class="card-body" style="height: 9em">
                                         <div class="d-flex flex-row justify-content-between">
                                             <div class="text-primary">
-                                                <?= $task['task'] ?>
+                                                <?= $task['task'] ?> <span
+                                                        class="badge rounded-pill text-bg-info fs-10"><?= $task['taskart'] ?></span>
                                             </div>
                                             <div>
                                                 <button class="btn btn-sm">
-                                                    <a href="<?= site_url('Tasks/crud_edit/1/' . $task['id']) ?>">
+                                                    <a href="<?= site_url('Tasks/crud_edit/1/' . $task['id'] . '/' . $spalte['spaltenid']) ?>">
                                                         <i class="fa-regular fa-pen-to-square"></i>
                                                     </a>
                                                 </button>
                                                 <button class="btn btn-sm">
-                                                    <a href="<?= site_url('Tasks/crud_edit/2/' . $task['id']) ?>">
+                                                    <a href="<?= site_url('Tasks/crud_edit/2/' . $task['id'] . '/' . $spalte['spaltenid']) ?>">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </a>
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="text-secondary">
-                                            <?= (isset($task['deadline']) && $task['deadline'] != '') ?
-                                                '<i class="fa-regular fa-calendar fa-fw"></i> ' . date('d.m.y', strtotime($task['deadline'])) : '' ?>
+                                        <div class="text-secondary d-flex flex-row justify-content-between">
+                                            <div class="w-6">
+                                                <?= (isset($task['deadline']) && $task['deadline'] != '') ?
+                                                    '<i class="fa-regular fa-calendar fa-fw"></i> ' . date('d.m.y', strtotime($task['deadline'])) : '' ?>
+                                            </div>
+
+                                            <div class="w-6 text-success">
+                                                <?= (isset($task['vorname']) && $task['vorname'] != '') ?
+                                                    $task['vorname'] : '' ?>
+                                                <?= (isset($task['nachname']) && $task['nachname'] != '') ?
+                                                    $task['nachname'] : '' ?>
+                                            </div>
+
                                         </div>
+                                        <div>
+
+                                        </div>
+
                                         <?= $task['notiz'] ?>
                                     </div>
                                 </div>

@@ -17,7 +17,7 @@
                     <label class="col-sm-2 col-form-label">Taskbezeichnung</label>
                     <div class="col-sm-10">
                         <input type="text" name="task_bezeichnung" id="task_name" class="form-control"
-                               placeholder="Beschreibung der Spalte"
+                               placeholder="Beschreibung der Task"
                             <?= $todo == '2' ? 'disabled' : '' ?>
                                value="<?= isset($tasks[0]['task']) ? $tasks[0]['task'] : "" ?>" required>
                     </div>

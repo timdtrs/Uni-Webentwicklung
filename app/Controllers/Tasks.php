@@ -53,6 +53,8 @@ class Tasks extends BaseController
 
 
         $data['spalte'] = $spalte;
+
+      
         echo view('templates/header');
         echo view('templates/nav');
         echo view('task_edit', $data);
@@ -105,9 +107,8 @@ class Tasks extends BaseController
         // 2 => Delete
         if ($todo == '2') {
             $tasksModel = new TasksModel();
-            $tasksModel->delete($_POST['id']);
+            $tasksModel->where('id', $_POST['id'])->delete();
         }
-
 
         return redirect()->to('/');
     }

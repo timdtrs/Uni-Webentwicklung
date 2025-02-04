@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">ID der Taskart</label>
+                    <label class="col-sm-2 col-form-label">Taskart</label>
                     <div class="col-sm-10">
                         <select name="taskart_id"
                                 class="form-control" <?= ($todo == '2') ? 'disabled' : '' ?> required>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">ID der Person</label>
+                    <label class="col-sm-2 col-form-label">Person</label>
                     <div class="col-sm-10">
                         <select name="personen_id"
                                 class="form-control" <?= ($todo == '2') ? 'disabled' : '' ?> required>
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">ID der Spalte</label>
+                    <label class="col-sm-2 col-form-label">Spalte</label>
                     <div class="col-sm-10">
                         <select name="spalten_id"
                                 class="form-control" <?= ($todo == '2') ? 'disabled' : '' ?> required>

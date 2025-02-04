@@ -34,11 +34,22 @@ class Validation extends BaseConfig
      * @var array<string, string>
      */
     public array $templates = [
-        'list'   => 'CodeIgniter\Validation\Views\list',
+        'list' => 'CodeIgniter\Validation\Views\list',
         'single' => 'CodeIgniter\Validation\Views\single',
     ];
 
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
+
+    public $spalten = [
+        'spalte' => 'required',
+        'spaltenbeschreibung' => 'required',
+        'sortid' => 'required|integer'
+    ];
+    public $spalten_errors = [
+        'spalte' => ['required' => 'Bitte tragen sie einen Spaltennamen ein.'],
+        'spaltenbeschreibung' => ['required' => 'Bitte tragen sie einen Spaltennamen ein.'],
+        'sortid' => ['integer' => 'Es sind nur Zahlen erlaubt!']
+    ];
 }

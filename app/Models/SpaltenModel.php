@@ -7,22 +7,36 @@ use CodeIgniter\Model;
 class SpaltenModel extends Model
 {
     protected $table = 'spalten';
-    protected $allowedFields = ['id', 'board', 'sortid', 'name', 'beschreibung'];
+    protected $allowedFields = ['spaltenid', 'boardsid', 'spalte', 'sortid', 'spaltenbeschreibung'];
+    protected $primaryKey = 'spaltenid';
 
-    public function getSpaltenByBoard($boardId = null)
+    public function getData($id = null)
     {
-        $this->spalten = $this->db->table('spalten');
-        $this->spalten->select('spalten.id, boards.name as board_name, spalten.sortid, spalten.name as spalte, spalten.beschreibung');
-        $this->spalten->join('boards', 'boards.id = spalten.board');
-
-        if ($boardId !== null) {
-            $this->spalten->where('spalten.board', $boardId);
+        if ($id == null) {
+            $this->spalten = $this->db->table($this->table);
+            $this->spalten->select('*');
+            $this->spalten->join('boards', 'boards.id = spalten.boardsid');
+            $this->spalten->orderBy('spalte', 'ASC');
+            $result = $this->spalten->get();
+            return $result->getResultArray();
+        } else {
+            $this->spalten = $this->db->table($this->table);
+            $this->spalten->select('*');
+            $this->spalten->where('spaltenid', $id);
+            $result = $this->spalten->get();
+            return $result->getResultArray();
         }
+    }
 
-        $this->spalten->orderBy('spalten.sortid', 'ASC');
+    public function getByBoard($id = null)
+    {
+
+        $this->spalten = $this->db->table($this->table);
+        $this->spalten->select('*');
+        $this->spalten->where('boardsid', $id);
+        $this->spalten->orderBy('spalte', 'ASC');
         $result = $this->spalten->get();
-
         return $result->getResultArray();
+
     }
 }
-

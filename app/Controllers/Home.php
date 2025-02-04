@@ -2,26 +2,30 @@
 
 namespace App\Controllers;
 
+use App\Models\BoardModel;
+use App\Models\SpaltenModel;
 use App\Models\TasksModel;
 
 class Home extends BaseController
 {
 
-    public function index()
+    public function index($id = 1)
     {
-        $tasksmodel = new TasksModel();
-        $data['tasks'] = $tasksmodel->getData();
-        echo view('templates/header');
-        echo view('templates/nav');
-        echo view('tasks', $data);
-        echo view('templates/footer');
+        $boardsmodel = new BoardModel();
+        $boards = $boardsmodel->getData();
+        $id = $boards[0]['id'];
+        return redirect()->to('Tasks/tasks/' . $id);
     }
+
 
     public function spalten()
     {
+        $spaltenmodel = new SpaltenModel();
+        $data['spalten'] = $spaltenmodel->getData();
+
         echo view('templates/header');
         echo view('templates/nav');
-        echo view('spalten');
+        echo view('spalten', $data);
         echo view('templates/footer');
     }
 
@@ -32,5 +36,5 @@ class Home extends BaseController
         echo view('erstellen');
         echo view('templates/footer');
     }
-    
+
 }

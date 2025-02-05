@@ -5,7 +5,9 @@ namespace App\Controllers;
 
 
 use App\Models\BoardModel;
+use App\Models\PersonenModel;
 use App\Models\SpaltenModel;
+use App\Models\TaskartenModel;
 use App\Models\TasksModel;
 
 class Tasks extends BaseController
@@ -44,15 +46,19 @@ class Tasks extends BaseController
         }
 
         $spaltenmodel = new SpaltenModel();
+        $personenmodel = new PersonenModel();
+        $taskartenmodel = new TaskartenModel();
         $spalten = $spaltenmodel->getData();
-        $spalten_ids = [];
-        foreach ($spalten as $spalt) {
-            array_push($spalten_ids, $spalt['spaltenid']);
-        }
-        $data['spalten'] = $spalten_ids;
+        $personen = $personenmodel->getData();
+        $taskarten = $taskartenmodel->getData();
 
+        $data['spalten'] = $spalten;
+        $data['personen'] = $personen;
+        $data['taskarten'] = $taskarten;
 
         $data['spalte'] = $spalte;
+
+
         echo view('templates/header');
         echo view('templates/nav');
         echo view('task_edit', $data);
@@ -105,9 +111,8 @@ class Tasks extends BaseController
         // 2 => Delete
         if ($todo == '2') {
             $tasksModel = new TasksModel();
-            $tasksModel->delete($_POST['id']);
+            $tasksModel->where('id', $_POST['id'])->delete();
         }
-
 
         return redirect()->to('/');
     }

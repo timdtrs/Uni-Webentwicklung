@@ -30,6 +30,8 @@ class TasksModel extends Model
     {
         $this->tasks = $this->db->table('tasks');
         $this->tasks->select('*');
+        $this->tasks->join('personen', 'personen.personenid = tasks.personenid', 'left');
+        $this->tasks->join('taskarten', 'taskarten.taskartid = tasks.taskartenid', 'left');
         $this->tasks->where('spaltenid', $id);
         $result = $this->tasks->get();
         return $result->getResultArray();

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="card mt-3">
-        <div class="card-header">
+        <div class="h3 card-header">
             Spalten
         </div>
         <div class="card-body">

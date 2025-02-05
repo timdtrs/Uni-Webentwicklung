@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="<?= base_url('css/styles.css') ?>">
-<div class="container mt-4 pb-3">
+<div class="container mt-3 pb-3">
     <div class="card">
 
         <legend class="card-header bg-white">

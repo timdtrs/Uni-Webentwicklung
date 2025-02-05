@@ -9,7 +9,7 @@ use App\Models\TasksModel;
 class Home extends BaseController
 {
 
-    public function index($id = 1)
+    public function index()
     {
         $boardsmodel = new BoardModel();
         $boards = $boardsmodel->getData();

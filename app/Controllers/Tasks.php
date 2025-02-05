@@ -21,6 +21,12 @@ class Tasks extends BaseController
         $data['boards'] = $boardmodel->getData();
         $data['board'] = $boardmodel->getData($boardid);
         $spalten = $spaltenmodel->getByBoard($boardid);
+
+
+        usort($spalten, function ($a, $b) {
+            return $a['sortid'] <=> $b['sortid'];
+        });
+
         foreach ($spalten as $index => $spalt) {
             $tasks = $tasksmodel->getBySpalt($spalt['spaltenid']);
             $spalten[$index]['tasks'] = $tasks;
@@ -33,6 +39,7 @@ class Tasks extends BaseController
         echo view('tasks', $data);
         echo view('templates/footer');
     }
+
 
     public function getcrud_edit($todo, $id = null, $spalte = null)
     {
@@ -48,9 +55,15 @@ class Tasks extends BaseController
         $spaltenmodel = new SpaltenModel();
         $personenmodel = new PersonenModel();
         $taskartenmodel = new TaskartenModel();
+        $boardsmodel = new BoardModel();
+        $boards = $boardsmodel->getData();
         $spalten = $spaltenmodel->getData();
         $personen = $personenmodel->getData();
         $taskarten = $taskartenmodel->getData();
+
+        foreach ($boards as $board) {
+            $data['boards'][$board['id']] = $board;
+        }
 
         $data['spalten'] = $spalten;
         $data['personen'] = $personen;

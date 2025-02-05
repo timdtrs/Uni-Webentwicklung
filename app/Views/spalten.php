@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card mt-3">
         <div class="card-header">
-            Spalten
+            <h3>Spalten</h3>
         </div>
         <div class="card-body">
             <a class="btn btn-primary mb-2" href="<?= site_url('Spalten/crud_edit/0') ?>" role="button">

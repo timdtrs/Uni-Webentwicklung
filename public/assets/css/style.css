@@ -67,3 +67,7 @@ footer {
 .navbar-nav .bi, .navbar-nav span {
     font-size: 0.9rem;
 }
+
+.spalte {
+    height: fit-content;
+}

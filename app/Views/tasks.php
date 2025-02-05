@@ -46,14 +46,14 @@
                                 <?= $spalte['spaltenbeschreibung'] ?>
                             </small>
                         </div>
-                        <div class="card-body" style="height: fit-content">
+                        <div class="card-body spalte">
                             <?php foreach ($spalte['tasks'] as $task) : ?>
                                 <div class="card mb-2">
                                     <div class="card-body" style="height: 9em">
                                         <div class="d-flex flex-row justify-content-between">
                                             <div class="text-primary">
-                                                <?= $task['task'] ?> <span
-                                                        class="badge rounded-pill text-bg-info fs-10"><?= $task['taskart'] ?></span>
+                                                <span
+                                                        class="badge rounded-pill <?= $task['taskart'] == 'Bug' ? 'text-bg-warning' : 'text-bg-info' ?> fs-10"><?= $task['taskart'] ?></span> <?= $task['task'] ?>
                                             </div>
                                             <div>
                                                 <button class="btn btn-sm">

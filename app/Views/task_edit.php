@@ -29,7 +29,7 @@
                                 class="form-control" <?= ($todo == '2') ? 'disabled' : '' ?> required>
                             <?php foreach ($taskarten as $item): ?>
                                 <option value="<?= htmlspecialchars($item['taskartid']) ?>"
-                                    <?= (isset($tasks[0]['taskartid']) && $tasks[0]['taskartid'] == $item['taskartid']) || (isset($spalte) && $spalte == $item['taskartid']) ? 'selected' : '' ?>>
+                                    <?= (isset($tasks[0]['taskartenid']) && $tasks[0]['taskartenid'] == $item['taskartid']) || (isset($spalte) && $spalte == $item['taskartid']) ? 'selected' : '' ?>>
                                     <?= $item['taskart'] ?>
                                 </option>
                             <?php endforeach; ?>
@@ -62,7 +62,7 @@
                             <?php foreach ($spalten as $item): ?>
                                 <option value="<?= htmlspecialchars($item['spaltenid']) ?>"
                                     <?= (isset($tasks[0]['spaltenid']) && $tasks[0]['spaltenid'] == $item['spaltenid']) || (isset($spalte) && $spalte == $item['spaltenid']) ? 'selected' : '' ?>>
-                                    <?= $item['spalte'] ?>
+                                    <?= $boards[$item['boardsid']]['board'] ?> - <?= $item['spalte'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
